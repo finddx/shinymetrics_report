@@ -1,0 +1,205 @@
+---
+title: "Shiny app metrics"
+author: "Anna Mantsoki"
+date: "2023-01-10"
+output: finddxtemplate::html_document_find
+ 
+    
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(lubridate)
+library(shinyfind)
+library(htmltools)
+library(shinymetrics)
+library(purrr)
+
+rsconnect::setAccountInfo(name='finddx',
+			  token=Sys.getenv("SHINYAPPS_TOKEN"),
+			  secret=Sys.getenv("SHINYAPPS_SECRET"))
+
+
+apps <- rsconnect::applications(account = "finddx")
+
+```
+
+
+This is a report generating metrics for all the FIND Shiny applications that are publicly available.
+
+## FIND Sars-CoV-2 Test tracker
+```{r FINDCov19Tracker, include=TRUE}
+ 
+app <- c("FINDCov19Tracker")
+app_name <- c("FIND Sars-CoV-2 Test tracker")
+server <- rep("shinyapps.io", length(app))
+from <- rep("2022-09-01 0:00:00", length(app))
+until <- rep("2022-12-31 0:00:00", length(app))
+
+
+metrics_df <- metrics(app = app, app_name = app_name, 
+                                    server = server, from = from, until = until)
+
+
+#unique(metrics_df$value)
+p <- plot_metrics(df = metrics_df, weekly = TRUE, app_name = "FIND Sars-CoV-2 Test tracker")
+print(p)
+
+
+```
+
+
+
+
+
+## FIND Sars-CoV-2 Policy dashboard
+```{r FINDCov19Policy, include=TRUE}
+ 
+app <- c("FINDCov19Policy")
+app_name <- c("FIND Sars-CoV-2 Policy dashboard")
+server <- rep("shinyapps.io", length(app))
+from <- rep("2022-09-01 0:00:00", length(app))
+until <- rep("2022-12-31 0:00:00", length(app))
+
+
+metrics_df <- metrics(app = app, app_name = app_name, 
+                                    server = server, from = from, until = until)
+
+
+#unique(metrics_df$value)
+p <- plot_metrics(df = metrics_df, weekly = TRUE, app_name = "FIND Sars-CoV-2 Policy dashboard")
+print(p)
+
+
+```
+
+## FIND Test directory (COVID-19)
+```{r testdir_tabs, include=TRUE}
+ 
+app <- c("testdir_tabs")
+app_name <- c("FIND Test directory (COVID-19)")
+server <- rep("shinyapps.io", length(app))
+from <- rep("2022-09-01 0:00:00", length(app))
+until <- rep("2022-12-31 0:00:00", length(app))
+
+
+metrics_df <- metrics(app = app, app_name = app_name, 
+                                    server = server, from = from, until = until)
+
+
+#unique(metrics_df$value)
+p <- plot_metrics(df = metrics_df, weekly = TRUE, app_name = "FIND Test directory (COVID-19)")
+print(p)
+
+
+```
+## FIND Test directory (NTDs)
+```{r ntds, include=TRUE}
+ 
+app <- c("ntds")
+app_name <- c("FIND Test directory (NTDs)")
+server <- rep("shinyapps.io", length(app))
+from <- rep("2022-09-01 0:00:00", length(app))
+until <- rep("2022-12-31 0:00:00", length(app))
+
+
+metrics_df <- metrics(app = app, app_name = app_name, 
+                                    server = server, from = from, until = until)
+
+
+#unique(metrics_df$value)
+p <- plot_metrics(df = metrics_df, weekly = TRUE, app_name = "FIND Test directory (NTDs)")
+print(p)
+
+
+```
+
+## FIND Test directory (Ebola)
+```{r ebola, include=TRUE}
+ 
+app <- c("ebola")
+app_name <- c("FIND Test directory (Ebola)")
+server <- rep("shinyapps.io", length(app))
+from <- rep("2022-09-01 0:00:00", length(app))
+until <- rep("2022-12-31 0:00:00", length(app))
+
+
+metrics_df <- metrics(app = app, app_name = app_name, 
+                                    server = server, from = from, until = until)
+
+
+#unique(metrics_df$value)
+p <- plot_metrics(df = metrics_df, weekly = TRUE, app_name = "FIND Test directory (Ebola)")
+print(p)
+
+
+```
+
+## FIND Test directory (Monkeypox)
+```{r monkeypox, include=TRUE}
+ 
+app <- c("monkeypox")
+app_name <- c("FIND Test directory (Monkeypox)")
+server <- rep("shinyapps.io", length(app))
+from <- rep("2022-09-01 0:00:00", length(app))
+until <- rep("2022-12-31 0:00:00", length(app))
+
+
+metrics_df <- metrics(app = app, app_name = app_name, 
+                                    server = server, from = from, until = until)
+
+
+#unique(metrics_df$value)
+p <- plot_metrics(df = metrics_df, weekly = TRUE, app_name = "FIND Test directory (Monkeypox)")
+print(p)
+
+
+```
+
+## FIND EQA directory (COVID-19)
+```{r covid_eqa, include=TRUE}
+ 
+app <- c("covid_eqa")
+app_name <- c("FIND EQA directory (COVID-19)")
+server <- rep("shinyapps.io", length(app))
+from <- rep("2022-09-01 0:00:00", length(app))
+until <- rep("2022-12-31 0:00:00", length(app))
+
+
+metrics_df <- metrics(app = app, app_name = app_name, 
+                                    server = server, from = from, until = until)
+
+
+#unique(metrics_df$value)
+p <- plot_metrics(df = metrics_df, weekly = TRUE, app_name = "FIND EQA directory (COVID-19)")
+print(p)
+
+
+```
+
+## FIND NGS Capacity dashboard (COVID-19)
+```{r ngscapacity, include=TRUE}
+ 
+app <- c("ngscapacity")
+app_name <- c("FIND NGS Capacity (COVID-19)")
+server <- rep("shinyapps.io", length(app))
+from <- rep("2022-09-01 0:00:00", length(app))
+until <- rep("2022-12-31 0:00:00", length(app))
+
+
+metrics_df <- metrics(app = app, app_name = app_name, 
+                                    server = server, from = from, until = until)
+
+
+#unique(metrics_df$value)
+p <- plot_metrics(df = metrics_df, weekly = TRUE, app_name = "FIND NGS Capacity (COVID-19)")
+print(p)
+
+
+```
+
+
+
+
+
+
