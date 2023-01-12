@@ -18,6 +18,14 @@ metrics_df_weekly <-
          n_connections = value)
 
 
+metrics_df_weekly_wide <- 
+  metrics_df_weekly |>
+  pivot_wider(
+    names_from =  application,
+    values_from = n_connections
+              )
+
 
 # Write latest file with weekly metrics  ------------------------------------------
 write_csv(x = metrics_df_weekly, file = 'data/metrics_weekly_latest.csv')
+write_csv(x = metrics_df_weekly_wide, file = 'data/metrics_df_weekly_wide_latest.csv')
