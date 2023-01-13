@@ -1,7 +1,6 @@
 library(tidyverse)
 library(lubridate)
 library(shinyfind)
-library(htmltools)
 library(shinymetrics)
 library(purrr)
 library(glue)

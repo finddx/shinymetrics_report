@@ -17,103 +17,10 @@ library(DT)
 library(htmltools)
 ```
 
-# Writing text
 
-This is an example report template made with the package `{finddxtemplate}`.
-
-## Level 2 title
-
-### Level 3 title
-
-#### Level 4 title
-
-Implementing bullet points: 
-
-+ Item 1
-+ Item 2
-
-Integrate a hyperlink: <https://www.finddx.org>
-
-Putting text in **bold**. 
-
-Putting text in _italic_.
-
-# Integrating code and results
 
 # Integrating Flourish chart
 ```{r, echo=FALSE}
-htmltools::tags$p(HTML('<div class="flourish-embed" data-src="story/1720803?474378"><script src="https://public.flourish.studio/resources/embed.js"></script></div>'))
+htmltools::tags$p(HTML('<div class="flourish-embed flourish-chart" data-src="visualisation/12424591?474378"><script src="https://public.flourish.studio/resources/embed.js"></script></div>'))
 ```
 
-## In the body of the report
-
-```{r}
-iris %>% 
-  DT::datatable()
-```
-
-```{r echo=FALSE}
-pal_find <- function(n = 14) {
-  stopifnot(n <= 14)
-  find_colors <- c(
-    # 100% shade of 3 primary and 1 secondary FIND color
-    "#5b254e",
-    "#00a2ab",
-    "#7b97a0",
-    "#e64148",
-    # randomly picked from FIND color strips
-    "#306e7c",
-    "#9b2c4c",
-    # 85% shade of 3 primary and 1 secondary FIND color
-    "#703d5f",
-    "#00b0b7",
-    "#91a5ad",
-    "#ea645d",
-    # 65% shade of 3 primary colors and 1 secondary FIND color
-    "#8f637b",
-    "#6dc3c8",
-    "#adbac0",
-    "#f08d80"
-  )
-  find_colors[1:n]
-}
-```
-
-```{r fig.width=10, fig.height=6, fig.align='center'}
-ggplot(data = iris) +
-  aes(x = Sepal.Width, fill = Species) +
-  geom_density(alpha = 0.6, color = NA) +
-  labs(title = "Iris sepal width",
-       subtitle = "This is a ggplot2 plot",
-       x = "Sepal width",
-       y = "Density",
-       fill = "Iris species") +
-  scale_fill_manual(values = pal_find()) +
-  theme_bw()
-```
-
-## In the form of tabsets {.tabset}
-
-### Table
-
-```{r}
-iris %>% 
-  DT::datatable()
-```
-
-### Plot
-
-```{r fig.width=10, fig.height=6, fig.align='center'}
-ggplot(data = iris) +
-  aes(x = Sepal.Width, fill = Species) +
-  geom_density(alpha = 0.6, color = NA) +
-  labs(title = "Iris sepal width",
-       subtitle = "This is a ggplot2 plot",
-       x = "Sepal width",
-       y = "Density",
-       fill = "Iris species") +
-  scale_fill_manual(values = pal_find()) +
-  guides(fill = "none") +
-  facet_grid(rows = vars(Species)) +
-  theme_bw()
-```
