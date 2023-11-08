@@ -1,5 +1,5 @@
 ---
-title: FIND HTML template
+title: FIND Test directories page views
 logo: "`r system.file('logo', 'logo.svg', package = 'finddxtemplate')`"
 author: ThinkR
 date: "`r Sys.Date()`"
@@ -19,8 +19,8 @@ library(htmltools)
 
 
 
-# Integrating Flourish chart
+#Page views 
 ```{r, echo=FALSE}
-htmltools::tags$p(HTML('<div class="flourish-embed flourish-chart" data-src="visualisation/12424591?474378"><script src="https://public.flourish.studio/resources/embed.js"></script></div>'))
+htmltools::tags$p(HTML('<div class="flourish-embed flourish-chart" data-src="visualisation/12434905?474378"><script src="https://public.flourish.studio/resources/embed.js"></script></div>'))
 ```
 

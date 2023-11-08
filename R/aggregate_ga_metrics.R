@@ -59,6 +59,29 @@ ga_metrics_df_weekly_wide <- ga_metrics_df_weekly |>
   )
 
 
+ga_metrics_df_weekly_testdirs <- ga_metrics_df_weekly |>
+  filter(application %in% c("FIND EQA directory (COVID-19)",
+                            "FIND Test directory (AMR)",
+                            "FIND Test directory (COVID-19)",
+                            "FIND Test directory (Ebola)",
+                            "FIND Test directory (Monkeypox)",
+                            "FIND Test directory (NTDs)",
+                            "FIND Test directory (Outbreaks)",
+                            "FIND Test directory (TB)"))
+
+
+
+ga_metrics_df_weekly_testdirs_wide <- ga_metrics_df_weekly_testdirs |>
+  pivot_wider(
+    names_from =  application,
+    values_from = page_views
+  )
+
+
 # Write latest file with weekly metrics  ------------------------------------------
 write_csv(x = ga_metrics_df_weekly, file = 'data/ga_metrics_df_weekly_latest.csv')
 write_csv(x = ga_metrics_df_weekly_wide, file = 'data/ga_metrics_df_weekly_wide_latest.csv')
+
+write_csv(x = ga_metrics_df_weekly_testdirs, file = 'data/ga_metrics_df_weekly_testdirs.csv')
+write_csv(x = ga_metrics_df_weekly_testdirs_wide, file = 'data/ga_metrics_df_weekly_testdirs_wide.csv')
+
