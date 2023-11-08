@@ -5,14 +5,26 @@ library(purrr)
 library(glue)
 
 
-files <- fs::dir_ls("data/google_analytics/", glob="*.csv")
-ga_metrics_df_weekly <- read_csv(files, id="path", skip = 10)
+files_2020_2022 <- fs::dir_ls("data/google_analytics/", glob="*2020-2022*.csv")
+ga_metrics_df_weekly_2020_2022 <- read_csv(files_2020_2022, id="path", skip = 10)|>
+  rename(date = `Day Index`,
+         page_views = `Page Views`) |>
+  mutate(date = lubridate::as_date(date, format = "%d/%m/%Y")) |>
+  mutate(application = stringr::str_replace(path, "data/google_analytics/", ""))
+  
+  
 
 
-ga_metrics_df_weekly <-
-  list.files(path = "data/google_analytics", pattern = "*.csv", full.names = TRUE) |>
-  read_csv(id="application", skip = 10) |>
-  mutate(application = stringr::str_replace(application, "data/google_analytics/", ""))|>
+files_2023 <- fs::dir_ls("data/google_analytics/", glob="* - 2023*.csv")
+ga_metrics_df_weekly_2023 <- read_csv(files_2023, id="path") |>
+  select(path, date = Date, page_views = Views) |>
+  mutate(date = lubridate::as_date(date, format = "%d %m %Y")) |>
+  mutate(application = stringr::str_replace(path, "data/google_analytics/20231107 - 2023 Pages views for test directories_", ""))
+  
+  
+
+
+ga_metrics_df_weekly <- bind_rows(ga_metrics_df_weekly_2020_2022, ga_metrics_df_weekly_2023) |>
   mutate(application = stringr::str_replace(application, ".csv", "")) |>
   mutate(application = case_when(application == "2020-2022_covid-19_EQA" ~ "FIND EQA directory (COVID-19)",
                                  application == "2020-2022_covid-19_ngs_sequencing_mapping" ~ "FIND NGS Capacity (COVID-19)",
@@ -22,12 +34,13 @@ ga_metrics_df_weekly <-
                                  application == "2020-2022_covid-19_test_tracker" ~ "FIND Sars-CoV-2 Test tracker",
                                  application == "2020-2022_ebola_test_dir" ~ "FIND Test directory (Ebola)",
                                  application == "2020-2022_monkeypox_test_dir" ~ "FIND Test directory (Monkeypox)",
-                                 application == "2020-2022_ntds_test_dir" ~ "FIND Test directory (NTDs)"
-                                 
+                                 application == "2020-2022_ntds_test_dir" ~ "FIND Test directory (NTDs)",
+                                 application == "AMR test directory_Table" ~ "FIND Test directory (AMR)",
+                                 application == "COVID-19 test directory_Table" ~ "FIND Test directory (COVID-19)",
+                                 application == "Outbreaks test directory_Table" ~ "FIND Test directory (Outbreaks)",
+                                 application == "TB test directory_Table" ~ "FIND Test directory (TB)"
   )
   ) |>
-  rename(date = `Day Index`,
-         page_views = `Page Views`) |>
   filter(!is.na(date)) |>
   mutate(date = lubridate::as_date(date, format = "%d/%m/%Y")) |>
   group_by(application, date) |>
