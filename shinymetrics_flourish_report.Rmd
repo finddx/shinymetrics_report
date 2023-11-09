@@ -1,7 +1,7 @@
 ---
-title: FIND Test directories page views
+title: DxConnect test directories weekly page views
 logo: "`r system.file('logo', 'logo.svg', package = 'finddxtemplate')`"
-author: ThinkR
+author: Anna Mantsoki
 date: "`r Sys.Date()`"
 output: finddxtemplate::html_document_find
 ---
@@ -19,7 +19,7 @@ library(htmltools)
 
 
 
-#Page views 
+#Page views per week for DxConnect test directories
 ```{r, echo=FALSE}
 htmltools::tags$p(HTML('<div class="flourish-embed flourish-chart" data-src="visualisation/12434905?474378"><script src="https://public.flourish.studio/resources/embed.js"></script></div>'))
 ```
