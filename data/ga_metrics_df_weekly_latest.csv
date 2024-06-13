@@ -1374,10 +1374,17 @@ date,application,page_views
 2023-10-30,FIND Test directory (AMR),41
 2023-10-30,FIND Test directory (COVID-19),35
 2023-10-30,FIND Test directory (Outbreaks),13
-2023-11-06,FIND Test directory (AMR),27
+2023-11-06,FIND Test directory (AMR),87
 2023-11-06,FIND Test directory (COVID-19),17
 2023-11-06,FIND Test directory (Outbreaks),5
 2023-11-06,FIND Test directory (TB),26
+2023-11-13,FIND Test directory (AMR),25
+2023-11-20,FIND Test directory (AMR),28
+2023-11-27,FIND Test directory (AMR),30
+2023-12-04,FIND Test directory (AMR),34
+2023-12-11,FIND Test directory (AMR),24
+2023-12-18,FIND Test directory (AMR),27
+2023-12-25,FIND Test directory (AMR),4
 2024-01-01,FIND Test directory (AMR),26
 2024-01-01,FIND Test directory (COVID-19),17
 2024-01-01,FIND Test directory (NTDs),7
@@ -1425,76 +1432,106 @@ date,application,page_views
 2024-02-26,FIND Test directory (TB),29
 2024-03-04,FIND Test directory (AMR),23
 2024-03-04,FIND Test directory (COVID-19),25
+2024-03-04,FIND Test directory (CXRs),110
+2024-03-04,FIND Test directory (Molecular POC),39
 2024-03-04,FIND Test directory (NTDs),10
 2024-03-04,FIND Test directory (Outbreaks),57
 2024-03-04,FIND Test directory (TB),22
 2024-03-11,FIND Test directory (AMR),28
 2024-03-11,FIND Test directory (COVID-19),26
+2024-03-11,FIND Test directory (CXRs),130
+2024-03-11,FIND Test directory (Molecular POC),13
 2024-03-11,FIND Test directory (NTDs),5
 2024-03-11,FIND Test directory (Outbreaks),41
 2024-03-11,FIND Test directory (TB),6
 2024-03-18,FIND Test directory (AMR),51
 2024-03-18,FIND Test directory (COVID-19),16
+2024-03-18,FIND Test directory (CXRs),45
+2024-03-18,FIND Test directory (Molecular POC),22
 2024-03-18,FIND Test directory (NTDs),3
 2024-03-18,FIND Test directory (Outbreaks),11
 2024-03-18,FIND Test directory (TB),53
 2024-03-25,FIND Test directory (AMR),27
 2024-03-25,FIND Test directory (COVID-19),11
+2024-03-25,FIND Test directory (CXRs),9
+2024-03-25,FIND Test directory (Molecular POC),11
 2024-03-25,FIND Test directory (NTDs),3
 2024-03-25,FIND Test directory (Outbreaks),22
 2024-03-25,FIND Test directory (TB),53
 2024-04-01,FIND Test directory (AMR),29
 2024-04-01,FIND Test directory (COVID-19),26
+2024-04-01,FIND Test directory (CXRs),12
+2024-04-01,FIND Test directory (Molecular POC),7
 2024-04-01,FIND Test directory (NTDs),4
 2024-04-01,FIND Test directory (Outbreaks),11
 2024-04-01,FIND Test directory (TB),43
 2024-04-08,FIND Test directory (AMR),35
 2024-04-08,FIND Test directory (COVID-19),14
+2024-04-08,FIND Test directory (CXRs),17
+2024-04-08,FIND Test directory (Molecular POC),15
 2024-04-08,FIND Test directory (NTDs),9
 2024-04-08,FIND Test directory (Outbreaks),11
 2024-04-08,FIND Test directory (TB),36
 2024-04-15,FIND Test directory (AMR),26
 2024-04-15,FIND Test directory (COVID-19),17
+2024-04-15,FIND Test directory (CXRs),10
+2024-04-15,FIND Test directory (Molecular POC),43
 2024-04-15,FIND Test directory (NTDs),9
 2024-04-15,FIND Test directory (Outbreaks),9
 2024-04-15,FIND Test directory (TB),9
 2024-04-22,FIND Test directory (AMR),17
 2024-04-22,FIND Test directory (COVID-19),25
+2024-04-22,FIND Test directory (CXRs),10
+2024-04-22,FIND Test directory (Molecular POC),29
 2024-04-22,FIND Test directory (NTDs),8
 2024-04-22,FIND Test directory (Outbreaks),32
 2024-04-22,FIND Test directory (TB),19
 2024-04-29,FIND Test directory (AMR),27
 2024-04-29,FIND Test directory (COVID-19),13
+2024-04-29,FIND Test directory (CXRs),9
+2024-04-29,FIND Test directory (Molecular POC),9
 2024-04-29,FIND Test directory (NTDs),11
 2024-04-29,FIND Test directory (Outbreaks),11
 2024-04-29,FIND Test directory (TB),22
 2024-05-06,FIND Test directory (AMR),20
 2024-05-06,FIND Test directory (COVID-19),11
+2024-05-06,FIND Test directory (CXRs),20
+2024-05-06,FIND Test directory (Molecular POC),13
 2024-05-06,FIND Test directory (NTDs),6
 2024-05-06,FIND Test directory (Outbreaks),10
 2024-05-06,FIND Test directory (TB),19
 2024-05-13,FIND Test directory (AMR),53
 2024-05-13,FIND Test directory (COVID-19),9
+2024-05-13,FIND Test directory (CXRs),14
+2024-05-13,FIND Test directory (Molecular POC),15
 2024-05-13,FIND Test directory (NTDs),5
 2024-05-13,FIND Test directory (Outbreaks),13
 2024-05-13,FIND Test directory (TB),23
 2024-05-20,FIND Test directory (AMR),38
 2024-05-20,FIND Test directory (COVID-19),21
+2024-05-20,FIND Test directory (CXRs),12
+2024-05-20,FIND Test directory (Molecular POC),12
 2024-05-20,FIND Test directory (NTDs),5
 2024-05-20,FIND Test directory (Outbreaks),19
 2024-05-20,FIND Test directory (TB),37
 2024-05-27,FIND Test directory (AMR),14
 2024-05-27,FIND Test directory (COVID-19),7
+2024-05-27,FIND Test directory (CXRs),11
+2024-05-27,FIND Test directory (Molecular POC),18
 2024-05-27,FIND Test directory (NTDs),6
 2024-05-27,FIND Test directory (Outbreaks),15
 2024-05-27,FIND Test directory (TB),24
 2024-06-03,FIND Test directory (AMR),63
 2024-06-03,FIND Test directory (COVID-19),19
+2024-06-03,FIND Test directory (CXRs),5
+2024-06-03,FIND Test directory (Molecular POC),20
 2024-06-03,FIND Test directory (NTDs),11
 2024-06-03,FIND Test directory (Outbreaks),17
 2024-06-03,FIND Test directory (TB),24
 2024-06-10,FIND Test directory (AMR),16
 2024-06-10,FIND Test directory (COVID-19),3
+2024-06-10,FIND Test directory (CXRs),52
+2024-06-10,FIND Test directory (Molecular POC),10
 2024-06-10,FIND Test directory (NTDs),10
 2024-06-10,FIND Test directory (Outbreaks),28
 2024-06-10,FIND Test directory (TB),8
