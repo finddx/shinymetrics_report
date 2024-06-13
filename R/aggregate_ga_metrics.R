@@ -73,14 +73,19 @@ ga_metrics_df_weekly_wide <- ga_metrics_df_weekly |>
 
 
 ga_metrics_df_weekly_testdirs <- ga_metrics_df_weekly |>
-  filter(application %in% c("FIND EQA directory (COVID-19)",
-                            "FIND Test directory (AMR)",
-                            "FIND Test directory (COVID-19)",
-                            "FIND Test directory (Ebola)",
-                            "FIND Test directory (Monkeypox)",
-                            "FIND Test directory (NTDs)",
-                            "FIND Test directory (Outbreaks)",
-                            "FIND Test directory (TB)"))
+  filter(application %in% c(
+    "FIND EQA directory (COVID-19)",
+    "FIND Test directory (AMR)",
+    "FIND Test directory (COVID-19)",
+    "FIND Test directory (Ebola)",
+    "FIND Test directory (Monkeypox)",
+    "FIND Test directory (NTDs)",
+    "FIND Test directory (Outbreaks)",
+    "FIND Test directory (TB)",
+    "FIND Test directory (CXRs)",
+    "FIND Test directory (Molecular POC)"
+    )
+    )
 
 
 
