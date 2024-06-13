@@ -22,9 +22,15 @@ ga_metrics_df_weekly_2023 <- read_csv(files_2023, id="path") |>
   mutate(application = stringr::str_replace(path, "data/google_analytics/20231107 - 2023 Pages views for test directories_", ""))
   
   
+files_2024 <- fs::dir_ls("data/google_analytics/", glob="* - 2024*.csv")
+ga_metrics_df_weekly_2024 <- read_csv(files_2024, id="path") |>
+  select(path, date = Date, page_views = Views) |>
+  mutate(date = lubridate::as_date(date, format = "%d %m %Y")) |>
+  mutate(application = stringr::str_replace(path, "data/google_analytics/20240611 - 2024 Pages views for test directories_", ""))
 
 
-ga_metrics_df_weekly <- bind_rows(ga_metrics_df_weekly_2020_2022, ga_metrics_df_weekly_2023) |>
+
+ga_metrics_df_weekly <- bind_rows(ga_metrics_df_weekly_2020_2022, ga_metrics_df_weekly_2023, ga_metrics_df_weekly_2024) |>
   mutate(application = stringr::str_replace(application, ".csv", "")) |>
   mutate(application = case_when(application == "2020-2022_covid-19_EQA" ~ "FIND EQA directory (COVID-19)",
                                  application == "2020-2022_covid-19_ngs_sequencing_mapping" ~ "FIND NGS Capacity (COVID-19)",
@@ -38,7 +44,8 @@ ga_metrics_df_weekly <- bind_rows(ga_metrics_df_weekly_2020_2022, ga_metrics_df_
                                  application == "AMR test directory_Table" ~ "FIND Test directory (AMR)",
                                  application == "COVID-19 test directory_Table" ~ "FIND Test directory (COVID-19)",
                                  application == "Outbreaks test directory_Table" ~ "FIND Test directory (Outbreaks)",
-                                 application == "TB test directory_Table" ~ "FIND Test directory (TB)"
+                                 application == "TB test directory_Table" ~ "FIND Test directory (TB)",
+                                 application == "NTDs test directory_Table" ~ "FIND Test directory (NTDs)"
   )
   ) |>
   filter(!is.na(date)) |>
